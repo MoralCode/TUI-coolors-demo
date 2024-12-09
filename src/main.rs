@@ -18,25 +18,26 @@ fn main() -> Result<(), io::Error> {
     let mut terminal = Terminal::new(backend)?;
 
     // Data points
+        // Example data points
     let red_points = vec![(0.0, 1.0), (1.0, 2.0)];
-    let blue_points = vec![(2.0, 3.0), (3.0, 4.0)];
-    let green_points = vec![(4.0, 5.0), (5.0, 6.0)];
+    let blue_points = vec![(2.0, 1.0), (3.0, 2.0)];
+    let green_points = vec![(4.0, 1.0), (5.0, 2.0)];
 
     // Create datasets with different colors
     let datasets = vec![
         Dataset::default()
             .name("Red Points")
-            .marker(Marker::Dot)
+            .marker(Marker::Braille)
             .style(Style::default().fg(Color::Red))
             .data(&red_points),
         Dataset::default()
             .name("Blue Points")
-            .marker(Marker::Dot)
+            .marker(Marker::Braille)
             .style(Style::default().fg(Color::Blue))
             .data(&blue_points),
         Dataset::default()
             .name("Green Points")
-            .marker(Marker::Dot)
+            .marker(Marker::Braille)
             .style(Style::default().fg(Color::Green))
             .data(&green_points),
     ];
